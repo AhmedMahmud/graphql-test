@@ -5,8 +5,7 @@ dotenv.config();
 
 mongoose.Promise = global.Promise;
 
-// const connection = mongoose.connect(process.env.MONGO_URL, {
-const connection = mongoose.connect("mongodb://localhost:27017/myapp", {
+const connection = mongoose.connect(process.env.MONGO_URL, {
     autoIndex: true,
     keepAlive: true,
     useNewUrlParser: true,
