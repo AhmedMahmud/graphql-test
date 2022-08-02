@@ -17,6 +17,13 @@ const ModelSchema = new Schema(
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
     },
+    // category_id: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    // },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Category',
+    },
     visible_from: {
       type: Date,
     },

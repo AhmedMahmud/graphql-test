@@ -6,6 +6,8 @@ const { createTask } = require('../functions/Tasks/createTask');
 const {
     taskDetailsVerification,
 } = require('../functions/Tasks/taskDetailsVerification');
+const { assignCategory } = require('../functions/Tasks/assignCategory');
+const { tasksByCategory } = require('../functions/Tasks/tasksByCategory');
 const { TaskTC } = require('../models/Task');
 
 const Query = {
@@ -15,6 +17,7 @@ const Query = {
         get: { create: true, auth: true },
         list: { create: true, auth: false },
     }),
+    tasksByCategory: tasksByCategory
 };
 
 const Mutation = {
@@ -26,6 +29,7 @@ const Mutation = {
     }),
     taskCreate: createTask,
     taskDetailsVerification: taskDetailsVerification,
+    assignCategory: assignCategory,
 };
 
 module.exports = { Query, Mutation };

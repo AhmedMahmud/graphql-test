@@ -28,6 +28,11 @@ const { Query: TaskQuery, Mutation: TaskMutation } = require("./Task");
 
 const { Mutation: PageMutation, Query: PageQuery } = require("./Page");
 
+const {
+  Query: CategoryQuery,
+  Mutation: CategoryMutation
+} = require("./Category");
+
 schemaComposer.Query.addFields({
   ...UserQuery,
   ...PermissionRoleQuery,
@@ -36,6 +41,7 @@ schemaComposer.Query.addFields({
   ...TaskQuery,
   ...TaskMessageQuery,
   ...PageQuery,
+  ...CategoryQuery,
 });
 
 schemaComposer.Mutation.addFields({
@@ -46,6 +52,7 @@ schemaComposer.Mutation.addFields({
   ...TaskMutation,
   ...TaskMessageMutation,
   ...PageMutation,
+  ...CategoryMutation,
 });
 
 module.exports = schemaComposer.buildSchema();
